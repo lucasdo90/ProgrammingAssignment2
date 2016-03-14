@@ -1,8 +1,6 @@
 ## This file creates a list which contains funtions to get 
 ## the value of a matrix and return the value of inversion of that matrix 
-
 ## this function get the value of the matrix and its inversion 
-
 makeCacheMatrix <- function(x = matrix()) {
   inv <- NULL
   set <- function(y){
@@ -15,14 +13,12 @@ makeCacheMatrix <- function(x = matrix()) {
   get_inv <- function() inv 
   list(set = set, get = get, set_inv = set_inv, get_inv = get_inv)
 }
-
-
 ## This function return the value of the inversion. If the inversion was
 ## already computed, then the function will return the message and the result. 
 ## If not, the inversion matrix will be computed and returned. 
 
 cacheSolve <- function(x, ...) {
-        ## Return a matrix that is the inverse of 'x'
+## Return a matrix that is the inverse of 'x'
   inv <- x$get_inv()
 
   if (!is.null(inv)){
@@ -41,7 +37,6 @@ m = makeCacheMatrix(x)
 m$get()
 a <-cacheSolve(m)
 a
-
 
 ## The results:
 
